@@ -1,0 +1,154 @@
+/* Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.  */
+html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+
+/*  apply a natural box layout model to all elements  */
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* ------------- BODY ------------- */
+body {
+	font-family: $defaultFont;
+	font-size: 16px;
+	font-weight: $normalWeight;
+    min-height: 100%;
+    width: 100%;
+    margin-bottom: $gutterdbl * 2 + $gutter + 2.5rem;
+
+    input {
+        border-radius: 2px;
+    }
+    a {
+        text-decoration: none;
+        color: $secondaryColor;
+        font-weight: 500;
+    }
+}
+
+
+/* ------------- HEADER ------------- */
+header {
+    .header-info {
+        padding: $gutterdbl;
+        background: $primaryColor;
+        color: $fontColor;
+        font-weight: $boldWeight;
+    }
+    #header-info-2 {
+        border-top: 1px solid black;
+        background: $secondaryColor;
+    }
+    
+} //end header
+
+
+
+
+
+
+/*  ------------- MAIN -------------  */
+
+main {
+    width: 100%;
+    #main-div {
+        
+        .card {
+            /* Add shadows to create the "card" effect */
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            background: $altColor;
+            padding: $gutterdbl * 2;
+            margin-bottom: $gutterdbl;
+            figure {
+                img {
+                    border-radius: 10px;
+                    width: 100%;
+                }
+                figcaption {
+                    position: relative;
+                    bottom: 50px;
+                    width: 100%;
+                    padding: $gutterdbl;
+                    font-weight: $boldWeight;
+                    color: $fontColor;
+                    background: rgba(136, 136, 137, .7);
+                }
+            }
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+/* Add some padding inside the card container */
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -$gutterdbl;
+    margin-bottom: $gutter;
+    .card-info {
+        display: block;
+        i {
+            float: left;
+            font-size: 2.5rem;
+            color: $fontColor;
+        }
+        span {
+            float: right;
+            margin-left: $gutter;
+            margin-top: $gutter;
+            font-size: .8rem;
+            font-weight: $boldWeight;
+        }
+    }
+}
+       
+        
+        
+        
+    } //end main div       
+} // end main
+
+
+/*  ------------- FOOTER -------------  */
+footer {
+    position:fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .footer-div {
+        
+
+        a {
+            display: block;
+            float: left;
+            width: 33.333%;
+            padding: $gutterdbl;
+            background: $primaryColor;
+            text-align: center;
+            font-size: 1rem;
+            i {
+            
+                margin-bottom: $gutter;
+                font-size: 1.5rem;
+                color: $fontColor;
+            }
+        }
+        a:hover {
+            background: lighten($primaryColor, 10%);
+            cursor: pointer;
+        }
+        .active {
+            background: $secondaryColor;
+            color: $primaryColor;
+        }
+    }
+}// end footer
+
+
+
+/*----- Clearfix: Force an Element not to collapse -----*/
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
